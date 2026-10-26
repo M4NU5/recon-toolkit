@@ -1,0 +1,4 @@
+# Scan outputs — never commit results or target data.
+out/
+*.log
+*.tmp

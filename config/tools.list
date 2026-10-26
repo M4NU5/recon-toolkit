@@ -1,0 +1,57 @@
+# Tool set for recon-toolkit.
+# This file is documentation, not a manifest the build reads. Keep it in sync
+# with the Dockerfile. The ProjectDiscovery tools are installed as a full stack
+# via pdtm (ProjectDiscovery Tool Manager), so the PD list below is indicative,
+# not exhaustive — pdtm installs the whole suite.
+
+## Network / port
+nmap                 # port + service/version scanning, NSE scripts
+masscan              # fast wide-range port sweeps
+naabu                # fast port scanning (ProjectDiscovery)
+netcat-traditional   # manual connections / banner grabbing
+
+## DNS
+dnsutils             # dig, host, nslookup
+dnsx                 # fast DNS resolution + record queries (ProjectDiscovery)
+whois                # registration / ownership lookups
+
+## Asset discovery
+subfinder            # passive subdomain enumeration (ProjectDiscovery)
+amass                # passive subdomain enumeration (OWASP)
+waybackurls          # historical URLs from the Wayback Machine (tomnomnom)
+gau                  # historical URLs from multiple sources (lc/gau)
+
+## Web
+httpx                # live-host probing + fingerprinting (ProjectDiscovery)
+katana                # crawling / endpoint discovery (ProjectDiscovery)
+whatweb              # technology fingerprinting
+wappalyzer           # technology fingerprinting (tomnomnom CLI)
+wafw00f              # WAF detection
+gobuster             # content/directory discovery
+feroxbuster          # recursive content discovery
+ffuf                 # web fuzzing
+gowitness            # web screenshots (needs chromium)
+
+## OSINT
+theharvester         # emails, hosts, subdomains from public sources
+
+## Vulnerability
+nuclei               # template-based scanning (ProjectDiscovery)
+dalfox               # XSS scanning
+sqlmap               # SQL injection testing
+
+## Secrets
+trufflehog           # secret scanning
+gitleaks             # secret scanning (git-aware)
+
+## TLS
+sslscan              # protocols / cipher suites / cert details
+tlsx                 # TLS data collection at scale (ProjectDiscovery)
+testssl.sh           # thorough TLS assessment (pinned git checkout)
+
+## ProjectDiscovery (other, via pdtm)
+# uncover, asnmap, cdncheck, mapcidr, tlsx, notify, interactsh-client, and more.
+# Run `pdtm -list` inside the container to see everything installed.
+
+## Utility
+curl wget jq ripgrep tmux vim less openssl git python3 chromium

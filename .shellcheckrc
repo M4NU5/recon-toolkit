@@ -1,0 +1,3 @@
+# SC1091: the shared lib is sourced via a path resolved from $0 at runtime,
+# which shellcheck can't follow statically. Safe to ignore.
+disable=SC1091
